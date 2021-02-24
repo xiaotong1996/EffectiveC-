@@ -108,6 +108,22 @@ namespace ChapterOne
     #endregion
 
     #region 第7条：用委托表示回调
+    class Item7
+    {
+        public delegate void Del(string message);
+
+        Del handler;
+
+        public Item7(Del callback)
+        {
+            handler = callback;
+        }
+
+        public void UseDelegate(string message)
+        {
+            handler(message);
+        }
+    }
     #endregion
 
     #region 第8条：用null条件运算符调用事件处理程序

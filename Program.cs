@@ -1,4 +1,4 @@
-﻿#define ITEM6
+﻿#define ITEM7
 using System;
 using ChapterOne;
 namespace EffectiveCSharp
@@ -30,6 +30,15 @@ namespace EffectiveCSharp
             #region 第6条：不要用表示符号名称的硬字符串来调用API
             Item6 item6 = new Item6();
             item6.Name = null;
+            #endregion
+#elif ITEM7
+            #region 第7条：用委托表示回调
+            void delegateImpletation(string message)
+            {
+                Console.WriteLine(message);
+            }
+            Item7 item7 = new Item7(delegateImpletation);
+            item7.UseDelegate("This is a message");
             #endregion
 #else
             #region backup
